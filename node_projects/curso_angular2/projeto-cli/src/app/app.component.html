@@ -1,0 +1,26 @@
+
+<div class="container-fluid">
+  <ul materialize="collapsible" class="collapsible" data-collapsible="accordion">
+    <li *ngFor="let item of listaPleitos">
+      <div class="collapsible-header"><h5>{{item.nomePleito}}</h5></div>
+      <div class="collapsible-body">
+        <ul class="collection">
+          <li class="collection-item" *ngFor="let itemEleicao of item.eleicoes">
+            <h5>{{itemEleicao.nomeEleicao}}</h5>
+            <ul class="collection">
+              <li class="collection-item" *ngFor="let itemLocalidade of itemEleicao.localizades">
+                {{itemLocalidade.nomeLocalidade}}
+                <ul class="collection">
+                  <li class="collection-item" *ngFor="let itemMunicipio of itemLocalidade.municipios">
+                    {{itemMunicipio.nomeMunicipio}}
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+      </ul>
+
+      </div>
+    </li>
+  </ul>
+</div>
